@@ -4,10 +4,16 @@ const port = 8080;
 
 // MiddleWares
 // Servir contenido estatico
-app.use( express.static('public'));
+//app.use( express.static('public'));
+
+// app.use(express.static('public', {
+//     extensions: ['html', 'htm'] 
+// }));
+
+app.use(express.static('public',{extensions:['html']}));
 
 app.get('/', (req, res) => {
-  res.send('Home page')
+  res.send('Home page') 
 })
 
 app.get('/hello-world',  (req, res) =>{

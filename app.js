@@ -1,8 +1,10 @@
 const express = require('express')
 const hbs = require('hbs');
+require('dotenv').config();
 
 const app = express()
-const port = 8080; 
+const port = process.env.PORT; 
+
 
 // HANDLEBARS 
 app.set('view engine', 'hbs');
@@ -16,7 +18,7 @@ hbs.registerPartials(__dirname + '/views/partials')
 //     extensions: ['html', 'htm'] 
 // }));
 
-app.use(express.static('public',{extensions:['html']}));
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
   // res.send('Hello World') 

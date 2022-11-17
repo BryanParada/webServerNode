@@ -17,7 +17,10 @@ app.use(express.static('public',{extensions:['html']}));
 
 app.get('/', (req, res) => {
   // res.send('Hello World') 
-  res.render('home');
+  res.render('home', {
+    name: 'Bryan',
+    title: 'Node Course'
+  });
 })
 
 app.get('/hello-world',  (req, res) =>{

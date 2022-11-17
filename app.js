@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express()
-const port = 8080;
+const port = 8080; 
+
+// TODO: require('hbs')
+app.set('view engine', 'hbs');
 
 // MiddleWares
 // Servir contenido estatico
@@ -13,7 +16,8 @@ const port = 8080;
 app.use(express.static('public',{extensions:['html']}));
 
 app.get('/', (req, res) => {
-  res.send('Home page') 
+  // res.send('Hello World') 
+  res.render('home');
 })
 
 app.get('/hello-world',  (req, res) =>{

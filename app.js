@@ -20,45 +20,45 @@ hbs.registerPartials(__dirname + '/views/partials')
 
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-  // res.send('Hello World') 
-  res.render('home', {
-    name: 'Bryan',
-    title: 'Node Course'
-  });
-})
+// app.get('/', (req, res) => {
+//   // res.send('Hello World') 
+//   res.render('home', {
+//     name: 'Bryan',
+//     title: 'Node Course'
+//   });
+// })
 
-app.get('/index', (req, res) => {
-  res.render('home', {
-    name: 'Bryan',
-    title: 'Node Course'
-  });
-})
+// app.get('/index', (req, res) => {
+//   res.render('home', {
+//     name: 'Bryan',
+//     title: 'Node Course'
+//   });
+// })
 
-app.get('/generic', (req, res) => { 
-  res.render('generic', {
-    name: 'Bryan',
-    title: 'Node Course'
-  });
-})
+// app.get('/generic', (req, res) => { 
+//   res.render('generic', {
+//     name: 'Bryan',
+//     title: 'Node Course'
+//   });
+//})
 
 // app.get('/generic',  (req, res) =>{
 //  res.sendFile( __dirname + '/public/generic.html')
 // });
 
-app.get('/elements', (req, res) => { 
-  res.render('elements', {
-    name: 'Bryan',
-    title: 'Node Course'
-  });
-})
+// app.get('/elements', (req, res) => { 
+//   res.render('elements', {
+//     name: 'Bryan',
+//     title: 'Node Course'
+//   });
+// })
 
 // app.get('/elements',  (req, res) =>{
 //   res.sendFile( __dirname + '/public/elements.html')
 //  });
 
 app.get('*',  (req, res) =>{
-  res.sendFile(__dirname + '/public/404.html')
+  res.sendFile(__dirname + '/public/index.html')
 })
 
 app.listen(port, () =>{
